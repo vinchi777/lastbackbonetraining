@@ -12,6 +12,7 @@
 		  this.listenTo(this.collection, 'add remove', this.commentCount),
 		  this.$comment_list = $("#comment_list"),
 		  this.$comment_count = $("#comment_count")
+		  this.collection.fetch();
 		},
 		commentCount: function(){
 		  this.$comment_count.html(this.collection.length);
