@@ -53,7 +53,7 @@ if ('development' == app.get('env')) {
 }
 
 function listComments(req, res){
-	Comment.find(null, null, options, function (err, docs) {
+	Comment.find({}, function (err, docs) {
 		if (err) {
 			console.log(err);
 			res.send(500, err);
