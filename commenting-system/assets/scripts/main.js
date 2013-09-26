@@ -9,7 +9,12 @@
 		  this.$input_author = $("#author"),
 		  this.$input_message = $("#message"),
 		  this.listenTo(this.collection, 'add', this.createView),
-		  this.$comment_list = $("#comment_list")
+		  this.listenTo(this.collection, 'add remove', this.commentCount),
+		  this.$comment_list = $("#comment_list"),
+		  this.$comment_count = $("#comment_count")
+		},
+		commentCount: function(){
+		  this.$comment_count.html(this.collection.length);
 		},
 		createComment: function(){
 		   var _this = this;
